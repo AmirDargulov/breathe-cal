@@ -1,6 +1,7 @@
 class City < ActiveRecord::Base
   serialize :daily_data, JSON
   
+  
   def update_city_data
     location_key = self.location_key
     if self.updated_at <= Date.today.to_time.beginning_of_day or !self.daily_data
@@ -29,6 +30,12 @@ class City < ActiveRecord::Base
         City.create(name: name, zip: zip, state: state, country: country, location_key: location_key )
         return location_key
       end
+    end
+  end
+  
+  class << self # Class methods
+    def nearby_cities
+      return ['all', 'cities', 'in', 'the', 'world']
     end
   end
   

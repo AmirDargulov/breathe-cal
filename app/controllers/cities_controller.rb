@@ -38,5 +38,9 @@ class CitiesController < ApplicationController
       d5 = forecasts[4]["AirAndPollen"]
       @forecasts = [d1,d2,d3,d4,d5]
     end
+    
+    def nearby_cities
+      return ['Almaty', 'Taldik', 'Albany']
+    end
   
 end

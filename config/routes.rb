@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   root 'breathe#index'
   
+  get '/nearby/(.:format)' => 'breathe#nearby'
+  
   resources :cities
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
